@@ -1,10 +1,10 @@
 // Exercicio Reduce
 
-const list = [1,2,3,4,5,6,7]
+// const list = [1,2,3,4,5,6,7]
 
-const sum = list.reduce((acc, current) => acc + current, 0)
+// const sum = list.reduce((acc, current) => acc + current, 0)
 
-console.log(sum);
+// console.log(sum);
 
 const companies = [ 
     { name: `Samsung`, marketValue: 500, CEO: `Kim Hyun Suk`, foundedOn: 1938 }, 
