@@ -6,9 +6,7 @@ function validarNumero(valor) {
         while (isNaN(valor)) {
             valor = prompt("Valor inválido. Informe um número sem vírgulas:");
         }
-        while (/[\,]/.test(valor)) {
-            valor = prompt("Valor inválido. Informe um número sem vírgulas:");
-        }
+        
         return valor;
     }
 
@@ -18,5 +16,5 @@ function validarNumero(valor) {
     let imc = pesoInfo / (alturaInfo * alturaInfo);
 
     document.write(`Seu IMC é de ${imc.toFixed(2)}`);
-
+    
 </script>
