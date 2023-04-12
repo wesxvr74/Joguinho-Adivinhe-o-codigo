@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+
+<script>
+
+function validarNumero(valor) {
+        while (isNaN(valor)) {
+            valor = prompt("Valor inválido. Informe um número sem vírgulas:");
+        }
+        while (/[\,]/.test(valor)) {
+            valor = prompt("Valor inválido. Informe um número sem vírgulas:");
+        }
+        return valor;
+    }
+
+    let pesoInfo = parseFloat(validarNumero(prompt(`Informe seu peso`)));
+    let alturaInfo = parseFloat(validarNumero(prompt(`Informe sua altura`)));
+    
+    let imc = pesoInfo / (alturaInfo * alturaInfo);
+
+    document.write(`Seu IMC é de ${imc.toFixed(2)}`);
+
+</script>
