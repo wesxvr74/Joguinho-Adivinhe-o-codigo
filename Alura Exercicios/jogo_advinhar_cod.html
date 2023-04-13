@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<script>
+
+function mostra(frase) {
+    document.write(frase)
+}
+
+function validarNumero(valor) {
+        while (isNaN(valor)) {
+            valor = prompt("Valor inválido. Informe um número sem vírgulas:");
+        }
+
+        return valor;
+    }
+
+let number= Math.round(Math.random() * 10);
+
+let palpite= parseInt(validarNumero(prompt(`Adivinhe o numero gerado. Insira um numero`)));
+    if (palpite == number) {
+        mostra(`Parabens. Você advinhou o numero! ` + number)
+    }
+    else {
+        mostra(`Não foi dessa vez... o numero era ` + number)
+    }
+    
+
+</script>
