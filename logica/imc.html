@@ -2,19 +2,29 @@
 
 <script>
 
-function validarNumero(valor) {
+    function validarNumero(valor) {
         while (isNaN(valor)) {
             valor = prompt("Valor inválido. Informe um número sem vírgulas:");
         }
-        
+
         return valor;
     }
 
     let pesoInfo = parseFloat(validarNumero(prompt(`Informe seu peso`)));
     let alturaInfo = parseFloat(validarNumero(prompt(`Informe sua altura`)));
-    
+
     let imc = pesoInfo / (alturaInfo * alturaInfo);
 
-    document.write(`Seu IMC é de ${imc.toFixed(2)}`);
-    
+    /* document.write(`Seu IMC é de ${imc.toFixed(2)}`); */
+
+    if (imc < 18.5) {
+        document.write("Seu IMC é de " + imc + " Você esta abaixo do Peso ideal para sua altura.");
+    } else if (imc > 18.5 < 24.9) {
+        document.write("Seu IMC é de " + imc + " Você esta no Peso ideal para sua altura.");
+    } else if (imc > 24.9 < 29.9) {
+        document.write("Seu IMC é de " + imc + " Você esta um pouco acima do Peso ideal para sua altura.");
+    } else if (imc > 29.9 < 34.9) {
+        document.write("Seu IMC é de " + imc + " Você esta acima do Peso ideal para sua altura.");
+    }
+
 </script>
