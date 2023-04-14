@@ -2,6 +2,12 @@
 
 <script>
 
+function pulaLinha() {
+
+document.write("<br>");
+document.write("<br>");
+}
+
 function mostra(frase) {
     document.write(frase)
 }
@@ -16,13 +22,24 @@ function validarNumero(valor) {
 
 let number= Math.round(Math.random() * 10);
 
-let palpite= parseInt(validarNumero(prompt(`Adivinhe o numero gerado. Insira um numero`)));
+// 3 chances para o usuario
+let tentativas = 1;
+
+while (tentativas <= 3) {
+    
+    let palpite= parseInt(validarNumero(prompt(`Adivinhe o numero gerado. Insira um numero`)));
+    
     if (palpite == number) {
         mostra(`Parabens. Você advinhou o numero! ` + number)
+        break
+        pulaLinha();    
     }
     else {
         mostra(`Não foi dessa vez... o numero era ` + number)
-    }
-    
+    } 
+    pulaLinha();
+    tentativas++;
+}
+
 
 </script>
