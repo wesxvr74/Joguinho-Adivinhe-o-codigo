@@ -25,10 +25,13 @@
 
         let input = document.querySelector("input");
         input.focus();
-
+        
+        let button = document.getElementById("button");
+        button.onclick = verifica;
+        
         verifica = () => {
             if (input.value == segredo) {
-                alert("Você Acertou o código era " + segredo);
+                alert("Você Acertou!!! O código era " + segredo);
             } else {
                 alert("Ops! Você Errou!!);
             
@@ -37,9 +40,7 @@
             input.focus();
 
         }
-        let button = document.getElementById("button");
-        button.onclick = verifica;
-
+        
     </script>
 </body>
 </html>
