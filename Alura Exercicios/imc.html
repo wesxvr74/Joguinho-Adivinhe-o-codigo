@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>IMC</title>
+</head>
+<style>
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    .mostrar {
+        display: block;
+    }
+</style>
+
+<body>
+    <h1>Calcule seu imc</h1>
+    <form id="Formulario">
+        <label for="number">Digite Seu peso</label> <br>
+        <input type="number" id="peso" name="nome"><br>
+        <label for="insira as idades">Digite sua altura</label><br>
+        <input type="number" id="altura" name="email"><br>
+        <button type="submit" id="calcular">calcular</button>
+        <div Result>
+            <h2 id="result">Seu imc é de : ${imc} </h2>
+        </div>
+    </form>
+</body>
+
+</html>
+
+<script>
+
+    function validarNumero(valor) {
+        while (isNaN(valor)) {
+            valor = prompt("Valor inválido. Informe um número sem vírgulas:");
+        }
+
+        return valor;
+    }
+
+    let pesoInfo = parseFloat(validarNumero(document.getElementById(`peso`).value));
+    let alturaInfo = parseFloat(validarNumero(document.getElementById(`altura`).value));
+
+    let imc = Math.round(pesoInfo / (alturaInfo * alturaInfo));
+
+    /* document.write(`Seu IMC é de ${imc.toFixed(2)}`); */
+
+    const meuBotao = document.getElementById('calcular');
+
+    meuBotao.onclick = imc;
+    const meuBotao = document.getElementById('calcular');
+    const meuH2 = document.getElementById('result');
+
+    meuBotao.addEventListener('click', function () {
+        meuH2.classList.toggle('mostrar');
+    });
+
+    if (imc < 18.5) {
+        return ("Seu IMC é de " + imc + ` MAGREZA` + " Você esta abaixo do Peso ideal para sua altura.");
+    } else if (imc > 18.5 && imc < 24.9) {
+        return ("Seu IMC é de " + imc + ` NORMAL` + " Você esta no Peso ideal para sua altura.");
+    } else if (imc > 24.9 && imc < 29.9) {
+        return ("Seu IMC é de " + imc + ` SOBREPESO` + " Você esta um pouco acima do Peso ideal para sua altura.");
+    } else if (imc > 29.9 && imc < 34.9) {
+        return ("Seu IMC é de " + imc + ` OBESIDADE` + " Você esta acima do Peso ideal para sua altura.");
+    }
+
+    meuBotao.onclick = imc;
+</script>
