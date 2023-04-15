@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".//jogo_adivinha.css">
+    <title>jogo de adivinhar</title>
+</head>
+<body>
+    <div>
+        <form>
+            <h2>Descubra o codigo aleatorio gerado</h2>
+            <input name="Insira um numero" id="input" autocomplete="off" required />
+            <label for="Insira um numero">
+                <span>Insira um numero</span>
+            </label>
+        </form>
+        <br>
+        <button id="button" class="btn-gradient">Descubra o codigo</button>
+    </div>
+
+    <script>
+        let segredo = Math.round(Math.random() * 10);
+
+        let input = document.querySelector("input");
+        input.focus();
+
+        verifica = () => {
+            if (input.value == segredo) {
+                alert("Você Acertou");
+            } else {
+                alert("Ops! Você Errou!!")
+            }
+            input.value = "";
+            input.focus();
+
+        }
+        let button = document.getElementById("button");
+        button.onclick = verifica;
+
+    </script>
+</body>
+</html>
