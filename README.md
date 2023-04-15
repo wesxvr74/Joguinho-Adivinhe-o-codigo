@@ -1,6 +1,6 @@
-# Programa-One
+#Programa-One
 
-Exercícios de Estudo
+
 
 Exercicios de fixação de logica de programação com uma leve estilizada.
 
