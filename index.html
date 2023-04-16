@@ -10,7 +10,7 @@
 <body>
     <div>
         <form>
-            <h2>Descubra o codigo aleatorio gerado de 1 a 10</h2>
+            <h2>Descubra o codigo aleatorio gerado</h2>
             <input name="Insira um numero" id="input" autocomplete="off" required />
             <label for="Insira um numero">
                 <span>Insira um numero</span>
@@ -25,24 +25,29 @@
 
         let input = document.querySelector("input");
         input.focus();
-                    
+
+        input.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                verifica();
+            }
+        });
+
         verifica = () => {
             let segredo = Math.round(Math.random() * 10);
-            
+
             if (input.value == segredo) {
-                alert("Você Acertou!!! O código era " + segredo);
+                alert(`VOCÊ DESCOBRIU O CODIGO!!! PARABENS`);
             } else {
-                alert("Ops! Você Errou!! O código era " + segredo);
-            
+                alert("Ops! Você Errou!! O código era " + segredo)
             }
             input.value = "";
             input.focus();
 
         }
-        
         let button = document.getElementById("button");
         button.onclick = verifica;
-        
+
     </script>
 </body>
 </html>
