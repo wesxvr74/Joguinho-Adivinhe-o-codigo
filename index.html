@@ -21,12 +21,14 @@
     </div>
 
     <script>
-        let segredo = Math.round(Math.random() * 10);
+        
 
         let input = document.querySelector("input");
         input.focus();
                     
         verifica = () => {
+            let segredo = Math.round(Math.random() * 10);
+            
             if (input.value == segredo) {
                 alert("Você Acertou!!! O código era " + segredo);
             } else {
