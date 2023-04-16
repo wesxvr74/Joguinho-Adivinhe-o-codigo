@@ -25,21 +25,21 @@
 
         let input = document.querySelector("input");
         input.focus();
-        
-        let button = document.getElementById("button");
-        button.onclick = verifica;
-        
+                    
         verifica = () => {
             if (input.value == segredo) {
                 alert("Você Acertou!!! O código era " + segredo);
             } else {
-                alert("Ops! Você Errou!!);
+                alert("Ops! Você Errou!!");
             
             }
             input.value = "";
             input.focus();
 
         }
+        
+        let button = document.getElementById("button");
+        button.onclick = verifica;
         
     </script>
 </body>
