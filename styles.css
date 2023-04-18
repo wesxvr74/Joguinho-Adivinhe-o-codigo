@@ -78,7 +78,7 @@ body {
 form {
     overflow: hidden;
     position: relative;
-    width: 80%;
+    width: 100%;
 }
 
 input {
